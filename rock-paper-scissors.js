@@ -8,17 +8,8 @@ function getComputerChoice() {
 let player_score = 0;
 let comp_score = 0;
 
-//event listener for player choice
-const buttons = document.querySelectorAll("button");
-let playerChoice = buttons.forEach((button) => {
-  button.addEventListener("click", function handleClick(event) {
-    alert(event.target.parentElement.id);
-  });
-});
-
 // const playerChoice = "rock";
 // for (let i = 0; i < 5; i++){
-
 let comp_selection = getComputerChoice();
 
 //TODO this is for testing
@@ -41,8 +32,7 @@ function rps_game(player_selection, comp_selection) {
     return `You lose. You chose ${player_selection}, computer chose ${comp_selection}.`;
   }
 }
-let rpsResult = rps_game(playerChoice, comp_selection);
-// }
+let rpsResult = rps_game(player_selection, comp_selection);
 
 if (player_score > comp_score) {
   console.log(
@@ -85,3 +75,16 @@ gameResult.textContent = `${rpsResult}`;
 result.appendChild(gameResult);
 
 //event listeners for button clicks
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener("click", function () {
+  rps_game("rock", getComputerChoice);
+});
+paper.addEventListener("click", function () {
+  rps_game("paper", getComputerChoice);
+});
+scissors.addEventListener("click", function () {
+  rps_game("scissors", getComputerChoice);
+});
