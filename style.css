@@ -76,3 +76,15 @@ body {
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+.playing {
+  transform: scale(1.4);
+  border: 2px solid gold;
+  border-radius: 18px;
+  box-shadow: 0 0 10px gold;
+  transition: all 1s;
+}
+
+.choices:hover {
+  transform: scale(1.1);
+}

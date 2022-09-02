@@ -27,8 +27,6 @@ const getScore = function (player_score, comp_score) {
 
 const getCompScore = function () {};
 
-// for (let i = 0; i < 5; i++){
-
 //TODO this is for testing
 
 function getWinner(player_selection, comp_selection) {
@@ -55,10 +53,13 @@ function getWinner(player_selection, comp_selection) {
 function play(e) {
   const playerChoice = e.target.id;
   const computerChoice = getComputerChoice();
-  const result = [];
-  result.push(playerChoice);
-  result.push(computerChoice);
-  console.log(result);
+  function transition(playerChoice, computerChoice) {
+    const playerButton = document.getElementById(`${playerChoice}`);
+    const compButton = document.querySelector(`.${computerChoice}`);
+    playerButton.classList.add("playing");
+    compButton.classList.add("playing");
+  }
+  transition(playerChoice, computerChoice);
   const winner = getWinner(playerChoice, computerChoice);
   rpsResult(winner);
 }
