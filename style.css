@@ -6,6 +6,28 @@
   width: 100vw;
 }
 
+button #rock {
+  max-height: 100px;
+  max-width: 100px;
+  background-size: cover;
+}
+
+#paper {
+  max-height: 100px;
+  max-width: 100px;
+  background-size: cover;
+}
+
+#scissors {
+  max-height: 100px;
+  max-width: 100px;
+  background-size: cover;
+}
+
+input {
+  max-width: 100px;
+  max-height: 100px;
+}
 body {
   background: url(/images/background.png);
   background-repeat: no-repeat;
