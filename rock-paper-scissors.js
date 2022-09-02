@@ -51,6 +51,8 @@ function getWinner(player_selection, comp_selection) {
 //Play game
 
 function play(e) {
+  const audio = document.querySelector("audio");
+  audio.play();
   const playerChoice = e.target.id;
   const computerChoice = getComputerChoice();
   function transition(playerChoice, computerChoice) {
@@ -58,6 +60,15 @@ function play(e) {
     const compButton = document.querySelector(`.${computerChoice}`);
     playerButton.classList.add("playing");
     compButton.classList.add("playing");
+    // part of code to remove playing
+    function removeTransition(e) {
+      if (e.propertyName !== "transform") return;
+      this.classList.remove("playing");
+    }
+    const played = document.querySelectorAll(".playing");
+    played.forEach((play) =>
+      play.addEventListener("transitionend", removeTransition)
+    );
   }
   transition(playerChoice, computerChoice);
   const winner = getWinner(playerChoice, computerChoice);
