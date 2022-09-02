@@ -12,6 +12,7 @@ const score = document.querySelector("#score");
 const h1PlayerScore = document.createElement("h3");
 const h1CompScore = document.createElement("h3");
 const result = document.querySelector("#result");
+const printResult = document.createElement("h3");
 
 const getScore = function (player_score, comp_score) {
   h1PlayerScore.textContent = `Player's current score: ${player_score}`;
@@ -63,11 +64,10 @@ function play(e) {
 }
 
 const rpsResult = function (winner) {
-  const gameResult = document.createElement("h3");
-  gameResult.style.color = "white";
-  gameResult.style.textAlign = "center";
-  gameResult.textContent = `${winner}`;
-  result.appendChild(gameResult);
+  printResult.style.color = "white";
+  printResult.style.textAlign = "center";
+  printResult.textContent = `${winner}`;
+  result.appendChild(printResult);
 };
 
 //event listeners for button clicks
